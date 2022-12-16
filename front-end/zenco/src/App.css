@@ -1,0 +1,133 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+div#root {
+    height: 100%;
+}
+
+.App {
+    font-family: "Lato", sans-serif;
+    max-width: 75rem;
+    margin: auto;
+    height: 100%;
+}
+
+
+/* .App-header {
+    /* background-image: url(BG\ image.png); */
+
+
+/* background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 500px;
+    width: 100%;
+    margin-bottom: 30px;
+} */
+
+.abc {
+    border: 5px solid rgb(68, 154, 185);
+    border-style: double;
+    height: 490px;
+    padding: 47px;
+    top: 30%;
+    position: absolute;
+}
+
+.login-button {
+    position: absolute;
+    bottom: 18%;
+    left: 55%;
+    background-color: rgba(15, 92, 57, 0.609);
+    border-radius: 10px;
+    padding: 12px 33px;
+    color: aliceblue;
+    box-shadow: 0 5px 10px 0 rgba(15, 92, 57, 0.609);
+}
+.wrapper {
+    padding: 20px;
+  }
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: center; 
+}
+.user-button {
+    position: absolute;
+    bottom: 18%;
+    right: 55%;
+    background-color: rgba(15, 92, 57, 0.609);
+    border-radius: 12px;
+    color: aliceblue;
+    padding: 12px 28px;
+    box-shadow: 0 5px 10px 0 rgba(15, 92, 57, 0.609);
+}
+
+.App-nav {
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(12, 81, 50, 0.609);
+}
+
+.nav-link {
+    float: left;
+    display: flex;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 17px 19px;
+    text-decoration: none;
+}
+
+.App-link:hover {
+    background-color: rgba(126, 122, 157, 0.423);
+}
+
+.App-main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    background: url(BGimage3.png);
+    background-repeat: no-repeat;
+    height: 110vh;
+    width: 110vw;
+}
+
+.Messages {
+    margin: 10px 10px auto;
+    min-width: 50%;
+    padding: 10px;
+    height: 100%;
+}
+
+.labelText {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+}
+
+@media screen and (max-width: 100px) {
+    .App {
+        height: fixed;
+    }
+    .App-main {
+        height: auto;
+    }
+    .sidebar {
+        min-width: 100%;
+        height: auto;
+    }
+    .registration {
+        min-width: 90%;
+        font-size: smaller;
+        height: auto;
+    }
+}

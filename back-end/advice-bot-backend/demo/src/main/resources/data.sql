@@ -1,0 +1,77 @@
+
+
+
+Insert Into Questions (Qid, Qtext, Qtype) Values (1, 'I feel tense or "wound up":','A');
+Insert Into Questions (Qid, Qtext, Qtype) Values (2, 'I feel as if I am slowed down:','D');
+Insert Into Questions (Qid, Qtext, Qtype) Values (3, 'I still enjoy the things I used to enjoy:','D');
+Insert Into Questions (Qid, Qtext, Qtype) Values (4, 'I get a sort of frightened feeling like "butterflies" in the stomach:','A');
+Insert Into Questions (Qid, Qtext, Qtype) Values (5, 'I get a sort of frightened feeling as if something awful is about to happen:','A');
+Insert Into Questions (Qid, Qtext, Qtype) Values (6, 'I have lost interest in my appearance: ','D');
+Insert Into Questions (Qid, Qtext, Qtype) Values (7, 'I feel restless as I have to be on the move:','A');
+Insert Into Questions (Qid, Qtext, Qtype) Values (8, 'I can laugh and see the funny side of things: ','D');
+Insert Into Questions (Qid, Qtext, Qtype) Values (9, 'Worrying thoughts go through my mind:','A');
+Insert Into Questions (Qid, Qtext, Qtype) Values (10, 'I look forward with enjoyment to things:','D');
+Insert Into Questions (Qid, Qtext, Qtype) Values (11, 'I get sudden feelings of panic:','A');
+Insert Into Questions (Qid, Qtext, Qtype) Values (12, 'I feel cheerful:','D');
+Insert Into Questions (Qid, Qtext, Qtype) Values (13, 'I can sit at ease and feel relaxed: ','A');
+Insert Into Questions (Qid, Qtext, Qtype) Values (14, 'I can enjoy a good book or radio or TV program:','D');
+Insert Into Questions (Qid, Qtext, Qtype) Values (15, 'Test test test: ','A');
+
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (1, 1, 'Not at all', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (2, 1, 'From time to time, occasionally', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (3, 1, 'A lot of the time', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (4, 1, 'Most of the time', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (5, 2, 'Not at all', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (6, 2, 'Sometimes', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (7, 2, 'Very often', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (8, 2, 'Nearly all the time', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (9, 3, 'Definitely as much', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (10, 3, 'Not quite so much', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (11, 3, 'Only a little', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (12, 3, 'Hardly at all', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (13, 4, 'Not at all', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (14, 4, 'Occasionally', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (15, 4, 'Quite Often', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (16, 4, 'Very Often', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (17, 5, 'Not at all', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (18, 5, 'A little, but it does not worry me', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (19, 5, 'Yes, but not too badly', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (20, 5, 'Very definitely and quite badly', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (21, 6, 'I take just as much care as ever', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (22, 6, 'I may not take quite as much care', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (23, 6, 'I do not take as much care as I should', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (24, 6, 'Definitely', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (25, 7, 'Not at all', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (26, 7, 'Not very much', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (27, 7, 'Quite a lot', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (28, 7, 'Very much indeed', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (29, 8, 'As much as I always could', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (30, 8, 'Not quite so much now', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (31, 8, 'Definitely not so much now', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (32, 8, 'Not at all', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (33, 9, 'Only occasionally', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (34, 9, 'From time to time, but not too often', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (35, 9, 'A lot of the time', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (36, 9, 'A great deal of the time', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (37, 10, 'As much as I ever did', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (38, 10, 'Rather less than I used to', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (39, 10, 'Definitely less than I used to', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (40, 10, 'Hardly at all', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (41, 11, 'Not at all', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (42, 11, 'Not very often', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (43, 11, 'Quite often', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (44, 11, 'Very often indeed', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (45, 12, 'As much as I ever did', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (46, 12, 'Rather less than I used to', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (47, 12, 'Definitely less than I used to', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (48, 12, 'Not at all', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (49, 13, 'Definitely', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (50, 13, 'Usually', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (51, 13, 'Not often', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (52, 13, 'Not at all', 3);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (53, 14, 'Often', 0);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (54, 14, 'Sometimes', 1);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (55, 14, 'Not often', 2);
+Insert Into QuesAndAns (QAid, Qid, Atext, Score) Values (56, 14, 'Very seldom', 3);
+
+
