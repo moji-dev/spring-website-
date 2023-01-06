@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+
 async function loginUser(credentials) {
   return fetch("http://localhost:8080/login", {
     method: "POST",
@@ -8,24 +9,47 @@ async function loginUser(credentials) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(credentials),
-  }).then((data) => data.json());
+  }).then(response => {
+    if (response.status === 200) {
+      console.log("Successful login")
+      return response.json();
+    } else {
+      alert("Please enter a valid username or password")
+      throw new Error("Invalid username or password.");
+    }
+  });
 }
 
 export default function Login({ setToken }) {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = await loginUser({
-      username,
-      password,
-    });
-    setToken(token);
+    if (!username || !password) {
+      alert("Fill in both the login fields.");
+    } else {
+      try {
+        const token = await loginUser({
+          username,
+          password,
+        });
+
+        setToken(token);
+        
+        setIsLoggedIn(true);
+
+      } catch (error) {
+        console.error(error);
+      }
+    }
   };
 
   return (
     <div className="login-wrapper">
+      {isLoggedIn && <div className="logged-in-banner">You are logged in!</div>}
       <h1>Please Log In</h1>
       <form onSubmit={handleSubmit}>
         <label>

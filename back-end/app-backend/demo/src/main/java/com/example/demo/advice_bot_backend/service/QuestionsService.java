@@ -1,7 +1,7 @@
-package com.example.demo.service;
-import com.example.demo.model.Questions;
-import com.example.demo.repository.QuestionsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+package com.example.demo.advice_bot_backend.service;
+
+import com.example.demo.advice_bot_backend.model.Questions;
+import com.example.demo.advice_bot_backend.repository.QuestionsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

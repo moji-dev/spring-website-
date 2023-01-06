@@ -1,20 +1,19 @@
 import React, {useRef} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
+<link rel="stylesheet" href="path/to/stylesheet.css"></link>
 
-export default function Messages(){
-    const name=useRef();
+export default function Registration(){
+    const username=useRef();
     const email=useRef();
     const password=useRef();
     const repPassword=useRef();
-    const buyer=useRef();
-    const seller=useRef();
     const tos=useRef();
 
     const validateForm = () => {
         let formValid = false;
 
-        if (name.current.validity.valueMissing 
+        if (username.current.validity.valueMissing 
             || email.current.validity.valueMissing 
             || password.current.validity.valueMissing
             || repPassword.current.validity.valueMissing){
@@ -24,10 +23,8 @@ export default function Messages(){
             alert("Invalid e-mail address. Please enter your e-mail again.");
         }else if (password.current.validity.tooShort){
             alert("Password is too short. Please select another password");
-        } else if(password.value !== repPassword.value) {
+        } else if(password.current.value !== repPassword.current.value) {
             alert("Passwords do not match. Please retry");
-        } else if (!buyer.current.checked && !seller.current.checked){
-            alert("Please check at least one checkbox to select being a seller or a buyer in the system.")
         } else if (tos.current.validity.valueMissing){
             alert("Please agree to the Terms and Conditions, and Privacy Policy.")
         }else{
@@ -40,58 +37,62 @@ export default function Messages(){
         event.preventDefault();
 
         if(validateForm()){
-            let buyer_seller=[buyer.current.checked,seller.current.checked]
-            axios.post('https://reqres.in/api/users',{
-                name: name.current.value,
+            axios.post('http://localhost:8080/user',{
+                username: username.current.value,
                 email: email.current.value,
                 password: password.current.value,
-                buyer_seller: buyer_seller,
             }).then(response=>{
                 console.log(response);
-                if (response.status === 201){
+                if (response.status === 200){
                     alert("Registered successfully.")
                 }
             }).then(()=>{
-                name.current.value="";
+                username.current.value="";
                 email.current.value="";
                 password.current.value="";
                 repPassword.current.value="";
-                buyer.current.checked=false;
-                seller.current.checked=false;
                 tos.current.checked=false;
             })
             .catch(error=>{
                 console.log(error);
+                alert("Error registering user");
             })
         }
       }
 
     return (
-        <form className="Messages" noValidate onSubmit={handleSubmit}>
-            <label className="labelText">Name: </label>
-            <input type="text" ref={name} required/><br/><br/>
 
-            <label className="labelText">Email:</label>
-            <input type="email" ref={email} name="email" required/><br/><br/>
-
-            <label className="labelText">Password:</label>
-            <input type="password" ref={password} name="password" required minLength="8"/><br/><br/>
-
-            <label className="labelText">Re-type password:</label>
-            <input type="password" ref={repPassword} name="repPassword" required/><br/><br/>
-
-            <input type="checkbox" ref={buyer} name="buyer" value="buyer"/>
-            <label>I want to buy produce directly from allotment owners.</label><br/>
-
-            <input type="checkbox" ref={seller} name="seller" value="seller"/>
-            <label>I want to sell produce from my allotment.</label><br/><br/>
-
-            <input type="checkbox" ref={tos} name="tos" value="tos" required/>
-            <label>I agree to the Terms of Use and Privacy Policy.</label>
-            <br/><br/>
-
-            <input type="submit" value="Submit"/>
-            <Link to={'/help'}>Learn more</Link>
-        </form>
-    )
-}
+        
+      <div class ="container">
+        <form class="registration" noValidate onSubmit={handleSubmit}>
+        <h1>Register Form</h1>
+        <div class="form-group">
+          <label class="registerText">Username: </label>
+          <input class="registerInput" type="text" ref={username} required></input><br/><br/>
+        </div>
+        <div class="form-group">
+          <label class="registerText">Email:</label>
+          <input class="registerInput" type="email" ref={email} name="email" required></input><br/><br/>
+        </div>
+        <div class="form-group">
+          <label class="registerText">Password:</label>
+          <input class="registerInput" type="password" ref={password} name="password" required minLength="8"></input><br/><br/>
+        </div>
+        <div class="form-group">
+          <label class="registerText">Re-type password:</label>
+          <input class="registerInput" type="password" ref={repPassword} name="repPassword" required></input><br/><br/>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" ref={tos} name="tos" value="tos" required></input>
+          <label>I agree to the Terms of Use and Privacy Policy.</label>
+          <br/><br/>
+        </div>
+        <div class="form-group">
+          <input class="registerButton" type="submit" value="Submit"></input>
+          <Link class="learnMoreLink" to={'/help'}>Learn more</Link>
+        </div>
+      </form>
+    </div>
+        
+        )
+    }

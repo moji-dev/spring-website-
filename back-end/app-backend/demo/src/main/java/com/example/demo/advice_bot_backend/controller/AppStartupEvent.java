@@ -1,10 +1,10 @@
-package com.example.demo.controller;
+package com.example.demo.advice_bot_backend.controller;
 
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
-import com.example.demo.repository.QuestionsRepository;
-import com.example.demo.model.Questions;
+import com.example.demo.advice_bot_backend.repository.QuestionsRepository;
+import com.example.demo.advice_bot_backend.model.Questions;
 
 @Component
 public class AppStartupEvent implements ApplicationListener<ApplicationReadyEvent> {
