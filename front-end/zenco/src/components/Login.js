@@ -9,22 +9,21 @@ async function loginUser(credentials) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(credentials),
-  }).then(response => {
+  }).then((response) => {
     if (response.status === 200) {
-      console.log("Successful login")
+      console.log("Successful login");
       return response.json();
     } else {
-      alert("Please enter a valid username or password")
+      alert("Please enter a valid username or password");
       throw new Error("Invalid username or password.");
     }
   });
 }
 
-export default function Login({ setToken }) {
-  const [username, setUserName] = useState();
-  const [password, setPassword] = useState();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  
+function Login(props) {
+  const { setToken } = props;
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,36 +31,34 @@ export default function Login({ setToken }) {
       alert("Fill in both the login fields.");
     } else {
       try {
-        const token = await loginUser({
-          username,
-          password,
-        });
-
-        setToken(token);
-        
-        setIsLoggedIn(true);
-
+        const loginResponse = await loginUser({ username, password });
+        const { success, token } = loginResponse;
+        if (success) {
+          setToken(token);
+         
+        } else {
+          console.error("Error logging in");
+        }
       } catch (error) {
         console.error(error);
       }
     }
   };
 
+
   return (
     <div className="login-wrapper">
-      {isLoggedIn && <div className="logged-in-banner">You are logged in!</div>}
+      <div className="logged-in-banner">
+      </div>
       <h1>Please Log In</h1>
       <form onSubmit={handleSubmit}>
         <label>
           <p>Username</p>
-          <input type="text" onChange={(e) => setUserName(e.target.value)} />
+          <input type="text" onChange={(e) => setUsername(e.target.value)} />
         </label>
         <label>
           <p>Password</p>
-          <input
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <input type="password" onChange={(e) => setPassword(e.target.value)} />
         </label>
         <div>
           <button type="submit">Submit</button>
@@ -74,3 +71,6 @@ export default function Login({ setToken }) {
 Login.propTypes = {
   setToken: PropTypes.func.isRequired,
 };
+
+export default Login; 
+
